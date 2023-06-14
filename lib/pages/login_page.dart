@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/pages/utils/routes.dart';
 
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
+      color: Colors.white,
+      child: SingleChildScrollView(
         child: Column(
           children: [
             Image.asset(
@@ -46,15 +48,17 @@ class LoginPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     child: Text("Se connecter"),
-                    style: TextButton.styleFrom(),
+                    style: TextButton.styleFrom(minimumSize: Size(100, 40)),
                     onPressed: () {
-                      print("pas de code");
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
                   ),
                 ],
               ),
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
